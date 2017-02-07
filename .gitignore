@@ -1,0 +1,7 @@
+/node_modules/*
+/nbproject/*
+/.idea/*
+./node_modules/*
+./nbproject/*
+./.idea/*
+./dist
