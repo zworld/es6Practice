@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 const config = {
     entry: {
-        'practice1': path.join(__dirname , '/src/practice1/index')
+        'practice1': path.join(__dirname , '/src/practice1/index.es6')
     },
     output:{
         path:  path.join(__dirname , 'src'),
