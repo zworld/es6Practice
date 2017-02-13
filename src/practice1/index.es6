@@ -14,8 +14,6 @@ try{
     console.log(e)
 }
 
-
-
 //实现iife
 {
     let temp = 1;
