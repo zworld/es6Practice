@@ -78,6 +78,56 @@
 	}
 
 	//ES6
+	{
+	    //字符串遍历
+	    var _iteratorNormalCompletion = true;
+	    var _didIteratorError = false;
+	    var _iteratorError = undefined;
+
+	    try {
+	        for (var _iterator = 'abc'[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	            var codePoint = _step.value;
+
+	            console.log(codePoint);
+	        }
+	        //includes(), startsWith(), endsWith() 返回boolean
+	    } catch (err) {
+	        _didIteratorError = true;
+	        _iteratorError = err;
+	    } finally {
+	        try {
+	            if (!_iteratorNormalCompletion && _iterator.return) {
+	                _iterator.return();
+	            }
+	        } finally {
+	            if (_didIteratorError) {
+	                throw _iteratorError;
+	            }
+	        }
+	    }
+
+	    var _str3 = "hello world";
+	    console.log(_str3.includes('hello'));
+	    console.log(_str3.startsWith('he'), _str3.startsWith('z'));
+	    console.log(_str3.endsWith('ld'), _str3.endsWith('z'));
+
+	    //repeat
+	    console.log(_str3.repeat(2));
+
+	    //padStart()，padEnd()是ES7语法
+	    // let padStr = 'pad';
+	    // console.log(padStr.padStart(6,'add'))
+	    // console.log(padStr.padEnd(6,'add'))
+	}
+	{
+	    //字符串模板``,${}中可以是任意js运算
+	    var _str4 = "hello world zhongxinzhi";
+	    var newStr = '\u65B0\u7684\u5B57\u7B26\u4E32: ' + _str4.split(' ').map(function (item) {
+	        return '\n        <strong>' + item + '</strong>\n    ';
+	    }).join('\n');
+
+	    console.log(newStr);
+	}
 
 /***/ }
 /******/ ]);

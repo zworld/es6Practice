@@ -31,4 +31,32 @@
 }
 
 //ES6
+{
+    //字符串遍历
+    for(let codePoint of 'abc'){
+        console.log(codePoint)
+    }
+    //includes(), startsWith(), endsWith() 返回boolean
+    let str = "hello world"
+    console.log(str.includes('hello'))
+    console.log(str.startsWith('he'),str.startsWith('z'))
+    console.log(str.endsWith('ld'),str.endsWith('z'))
 
+    //repeat
+    console.log(str.repeat(2))
+
+    //padStart()，padEnd()是ES7语法
+    // let padStr = 'pad';
+    // console.log(padStr.padStart(6,'add'))
+    // console.log(padStr.padEnd(6,'add'))
+
+}
+{
+    //字符串模板``,${}中可以是任意js运算
+    let str = "hello world zhongxinzhi"
+    let newStr = `新的字符串: ${ str.split(' ').map(item => `
+        <strong>${item}</strong>
+    `).join('\n') }`
+
+    console.log(newStr)
+}
