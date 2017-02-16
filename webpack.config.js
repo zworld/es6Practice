@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
-const entry = {}
+var entry = {};
+var filelist;
 // fs.readdir(path.join(__dirname,'src'),function(err, data){
 //     if(err){
 //         console.log(__dirname,err)
@@ -36,10 +37,15 @@ var walkSync = function(dir, filelist) {
             }
         }
     });
-    console.log(filelist)
     return filelist;
 };
-walkSync(path.join(__dirname , 'src/'))
+
+filelist = walkSync(path.join(__dirname , 'src/'),[])
+filelist.forEach(function(item,index){
+    var i = index + 1;
+    entry['practice' + i] = item
+})
+
 const config = {
 
     entry: entry,
