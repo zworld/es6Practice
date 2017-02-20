@@ -67,7 +67,36 @@
     console.log(arr.lastIndexOf(4,4))
 }
 {
-    //迭代方法 every filter forEach map some
+    //迭代方法 every filter forEach map some 参数均是（item,index,array）
+
+    let arr = [1,2,3,4,5,6];
+    //every,遍历每一项 如果均返回true，则结果返回true,如果某一项没返回true,终止递归，返回false
+    let everyResult = arr.every(function (item,index,array) {
+        return true
+    })
+    console.log(everyResult)
+
+    //filter 运行每一项 返回结果为true的项组成数组
+    let filterResult = arr.filter(function (item,index,arr) {
+        if(item < 4 ) return true
+    })
+    console.log(filterResult)
     
+    //forEach遍历每一项，无返回值
+    let forEachResult = arr.forEach(function (item,index,array) {
+    })
+
+    //map 返回每次函数调用的结果组成的数组,没有返回则返回数组该项为undefined
+    var mapResult = arr.map(function (item,index,array) {
+        return Math.pow(item,2)
+    })
+    console.log(mapResult)
+
+    //some 迭代每一项，如果有一项返回true 则返回true
+
+    let someResult = arr.some(function (item,index,array) {
+        if(item == 1) return true
+    })
+    console.log(someResult)
 
 }
