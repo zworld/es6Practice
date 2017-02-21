@@ -156,5 +156,74 @@
 	    console.log(sum);
 	}
 
+	//ES6
+	{
+	    //数组实例的find()和findIndex()查找到第一个返回为true的值终止递归，find返回数值，findindx返回位置
+	    var _arr9 = [5, 6, 7, 8, 9, 10];
+	    var result = _arr9.find(function (value, index, arr) {
+	        return value > 7;
+	    });
+	    console.log(result);
+	    result = _arr9.findIndex(function (value, index, arr) {
+	        return value > 7;
+	    });
+	    console.log(result);
+	}
+	{
+	    //数组实例的entries()，keys()和values(),数组支持for....of,用作遍历
+	    var _arr10 = [5, 6, 7, 8, 9];
+
+	    var _iteratorNormalCompletion = true;
+	    var _didIteratorError = false;
+	    var _iteratorError = undefined;
+
+	    try {
+	        for (var _iterator = _arr10.keys()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	            var index = _step.value;
+
+	            console.log(index);
+	        }
+	    } catch (err) {
+	        _didIteratorError = true;
+	        _iteratorError = err;
+	    } finally {
+	        try {
+	            if (!_iteratorNormalCompletion && _iterator.return) {
+	                _iterator.return();
+	            }
+	        } finally {
+	            if (_didIteratorError) {
+	                throw _iteratorError;
+	            }
+	        }
+	    }
+
+	    console.log(_arr10.keys());
+	    var _iteratorNormalCompletion2 = true;
+	    var _didIteratorError2 = false;
+	    var _iteratorError2 = undefined;
+
+	    try {
+	        for (var _iterator2 = _arr10.values()[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	            var value = _step2.value;
+
+	            console.log(value);
+	        }
+	    } catch (err) {
+	        _didIteratorError2 = true;
+	        _iteratorError2 = err;
+	    } finally {
+	        try {
+	            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                _iterator2.return();
+	            }
+	        } finally {
+	            if (_didIteratorError2) {
+	                throw _iteratorError2;
+	            }
+	        }
+	    }
+	}
+
 /***/ }
 /******/ ]);

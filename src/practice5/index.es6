@@ -109,3 +109,29 @@
     })
     console.log(sum)
 }
+
+//ES6
+{
+    //数组实例的find()和findIndex()查找到第一个返回为true的值终止递归，find返回数值，findindx返回位置
+    let arr = [5,6,7,8,9,10];
+    let result = arr.find(function(value,index,arr){
+        return value > 7
+    })
+    console.log(result)
+    result = arr.findIndex(function (value,index,arr) {
+        return value > 7　
+    })
+    console.log(result)
+}
+{
+    //数组实例的entries()，keys()和values(),数组支持for....of,用作遍历
+    let arr = [ 5,6,7,8,9 ];
+
+    for(let index of arr.keys()){
+        console.log(index)
+    }
+    console.log(arr.keys())
+    for(let value of arr.values()){
+        console.log(value)
+    }
+}
