@@ -146,6 +146,15 @@
 	    });
 	    console.log(someResult);
 	}
+	{
+	    //归并方法 reduce reduceRight
+	    var _arr8 = [1, 2, 3, 4, 5, 6, 7];
+	    //reduce 第一次执行 prev是数组第一项
+	    var sum = _arr8.reduce(function (prev, cur, index, array) {
+	        return prev + cur;
+	    });
+	    console.log(sum);
+	}
 
 /***/ }
 /******/ ]);
