@@ -1,3 +1,4 @@
+import "babel-polyfill"
 /*
 数组操作
  */

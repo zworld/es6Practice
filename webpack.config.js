@@ -3,26 +3,6 @@ const webpack = require('webpack');
 const fs = require('fs');
 var entry = {};
 var filelist;
-// fs.readdir(path.join(__dirname,'src'),function(err, data){
-//     if(err){
-//         console.log(__dirname,err)
-//     }else{
-//         data.forEach(item => {
-//             fs.readdir('src/'+item,function(err,data){
-//                if(err){
-//                    console.log(err)
-//                }else{
-//                    var key = item;
-//                    data.forEach(item => {
-//                         if(/(.es6)$/.test(item)){
-//                             entry[key] = path.join(__dirname,'src',key,item)
-//                         }
-//                    })
-//                }
-//             })
-//         })
-//     }
-// })
 var walkSync = function(dir, filelist) {
     var fs = fs || require('fs'),
         files = fs.readdirSync(dir);
