@@ -1,4 +1,4 @@
-import "babel-polyfill"
+// import "babel-polyfill"
 /*
 数组操作
  */
@@ -131,8 +131,6 @@ import "babel-polyfill"
     for(let index of arr.keys()){
         console.log(index)
     }
+    [1, 2, 3].includes(3, 3);
     console.log(arr.keys())
-    for(let value of arr.values()){
-        console.log(value)
-    }
 }
