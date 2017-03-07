@@ -71,5 +71,79 @@
     console.log(Object.getOwnPropertyNames(obj1))
 }
 
+{
+    //getter,setter存取器属性，区别数据属性。若只有getter方法，那么它只是个可读属性，如果只有setter方法，那么它只是可写属性，读取只得到undefined
+    let obj = {
+        //x,y是普通可读写的数据属性
+        x: 1,
+        y: 1,
+        //r是存取性属性
+        get r(){
+            return this.x + this.y
+        },
+        set r(val){
+            this.x = val/2;
+            this.y = val/2
+        },
+        //w是只写属性
+        set w(val){
+            this.x *= 2;
+            this.y *=2;
+        },
+        //s是只取属性
+        get s(){
+            return 'onlyRead'
+        }
+    }
+    console.log('r:' + obj.r)
+    obj.r = 4
+    console.log('设置r=4后,r=' + obj.r)
+    console.log('获取只存属性w：' + obj.w)
+    // try{obj.s = 'change';}catch(e){
+    //     console.log( '将只取属性s设置为"change"后,报错:' + e)
+    // }
+}
+
+{
+     /*
+     属性的特性
+    */
+
+    //数据属性 value,writable,enumerable,configurable; 存取属性 get set enumerable configurable。用Object.getOwnpropertyDescriptor()获取
+    let obj = {
+        x:1,
+        get y(){},
+        set z(val){}
+    }
+    console.log(Object.getOwnPropertyDescriptor(obj,'x'),Object.getOwnPropertyDescriptor(obj,'y'),Object.getOwnPropertyDescriptor(obj,'z'))
+
+    //设置属性特性Object.defineProperty()
+    let obj1 = {}
+    Object.defineProperty(obj1,'x',{
+        value:1,
+        writable:true,
+        enumerable: false,
+        configurable: true
+    })
+    Object.defineProperty(obj1,'y',{
+        get: function () {
+        },
+        set:function () {
+        },
+        enumerable: false,
+        configurable: true
+    })
+    console.log(Object.getOwnPropertyDescriptor(obj1,'x'),Object.getOwnPropertyDescriptor(obj1,'y'))
+    //同时修改或添加多个属性 Object.defineProperties(obj,configObj)
+}
+
+{
+    /*
+     对象的三个属性
+     */
+
+
+}
+
 
 
