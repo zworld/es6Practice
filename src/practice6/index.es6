@@ -141,8 +141,57 @@
     /*
      对象的三个属性
      */
+    {
+        //原型属性 检测一个对象是否是另外一个对象的原型 isPrototypeOf
+        let pro = {x:1};
+        let fun = function () {
+        }
+        fun.prototype = pro;
+        let obj = new fun();
+        console.log(pro.isPrototypeOf(obj))
+    }
+    {
+        //类属性
+
+        //instanceOf  判断Array的时候会有问题，因为在iframe中window实例的array和在非window实例下的array是不同的
+        let str = 'testString';
+        console.log( str instanceof Object && str instanceof String)
+
+        //用Object.prototype.toString.call()来处理
+        function classOf(o) {
+            return Object.prototype.toString.call(o).slice(8,-1)
+        }
+        console.log(classOf(new Date),classOf(/\.test/),classOf(new Array()),classOf(new Object()))
+    }
+    {
+        //可扩展性
+        //Object.isExtensible(),Object.preventExtensions(),阻止添加属性,但可以删除
+        let testExtensible = {x:1}
+        console.log(Object.isExtensible(testExtensible));
+        Object.preventExtensions(testExtensible);
+
+        //Object.seal(),Object.seal()，在preventExtensions()基础上让属性不可配置，使得属性不可配置也不可删除,修改值那些不影响
+        let testSeal = {x:1}
+        console.log(Object.isSealed(testSeal))
+        Object.seal(testSeal);
+
+        //Object.freeze(),Object.isFrozen(),在seal基础上增加了不可写的属性
+        let testFreeze = {x:1};
+        console.log(Object.freeze(testFreeze));
+        Object.freeze(testFreeze);
+
+    }
 
 
+}
+
+{
+    //序列化对象 JSON.stringify(),JSON.parse(),主要用来实现深拷贝
+    let obj= {x:1}
+    let toJSON = JSON.stringify(obj);
+    console.log(toJSON)
+    let deepCopy = JSON.parse(toJSON)
+    console.log(deepCopy)
 }
 
 
