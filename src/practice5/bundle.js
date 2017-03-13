@@ -50,11 +50,11 @@
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 
-	var _from = __webpack_require__(106);
+	var _from = __webpack_require__(68);
 
 	var _from2 = _interopRequireDefault(_from);
 
-	var _slice = __webpack_require__(114);
+	var _slice = __webpack_require__(75);
 
 	var _slice2 = _interopRequireDefault(_slice);
 
@@ -1098,72 +1098,34 @@
 /* 65 */,
 /* 66 */,
 /* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */,
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */,
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */,
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */,
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(107), __esModule: true };
+	module.exports = { "default": __webpack_require__(69), __esModule: true };
 
 /***/ },
-/* 107 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(50);
-	__webpack_require__(108);
+	__webpack_require__(70);
 	module.exports = __webpack_require__(17).Array.from;
 
 /***/ },
-/* 108 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx            = __webpack_require__(18)
 	  , $export        = __webpack_require__(15)
 	  , toObject       = __webpack_require__(49)
-	  , call           = __webpack_require__(109)
-	  , isArrayIter    = __webpack_require__(110)
+	  , call           = __webpack_require__(71)
+	  , isArrayIter    = __webpack_require__(72)
 	  , toLength       = __webpack_require__(38)
-	  , createProperty = __webpack_require__(111)
+	  , createProperty = __webpack_require__(73)
 	  , getIterFn      = __webpack_require__(57);
 
-	$export($export.S + $export.F * !__webpack_require__(112)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(74)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -1193,7 +1155,7 @@
 
 
 /***/ },
-/* 109 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// call something on iterator step with safe closing on error
@@ -1210,7 +1172,7 @@
 	};
 
 /***/ },
-/* 110 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// check on default Array iterator
@@ -1223,7 +1185,7 @@
 	};
 
 /***/ },
-/* 111 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1236,7 +1198,7 @@
 	};
 
 /***/ },
-/* 112 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var ITERATOR     = __webpack_require__(47)('iterator')
@@ -1262,21 +1224,20 @@
 	};
 
 /***/ },
-/* 113 */,
-/* 114 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(115), __esModule: true };
+	module.exports = { "default": __webpack_require__(76), __esModule: true };
 
 /***/ },
-/* 115 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(116);
+	__webpack_require__(77);
 	module.exports = __webpack_require__(17).Array.slice;
 
 /***/ },
-/* 116 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
