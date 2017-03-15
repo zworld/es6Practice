@@ -40,7 +40,7 @@ const config = {
             {
                 test: /\.(js|es6)$/,
                 loader: 'babel',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             }
         ],
 

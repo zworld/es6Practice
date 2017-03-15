@@ -44,8 +44,6 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
 	var _getIterator2 = __webpack_require__(54);
 
 	var _getIterator3 = _interopRequireDefault(_getIterator2);

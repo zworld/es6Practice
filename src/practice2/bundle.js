@@ -44,8 +44,6 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
 	var _slicedToArray2 = __webpack_require__(1);
 
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);

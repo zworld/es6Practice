@@ -44,8 +44,6 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	"use strict";
-
 	/*
 	    1、let，const块级作用域
 	    2、let,const无变量提升

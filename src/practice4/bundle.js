@@ -44,8 +44,6 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
 	var _isNan = __webpack_require__(58);
 
 	var _isNan2 = _interopRequireDefault(_isNan);
