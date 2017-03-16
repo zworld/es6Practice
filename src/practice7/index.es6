@@ -94,4 +94,67 @@ import "babel-polyfill"
         }
         bar()
     }
+
+    {
+      //箭头函数
+        console.log([1,2,3].map(x=>x**2))
+        let numbers = (...nums) => nums
+        console.log(numbers(2,1,3,4))
+
+        let a= {
+           f: ()=>{
+               return ()=>this
+           }
+        }
+        console.log(a.f()())
+
+        //用rest代替argument
+        let f = (...args) => console.log(args);
+        f(1,2,3)
+
+        //箭头函数this总是指向所在函数运行时的this,若没有，则指向所在块区域或window
+        var a = {
+            b:function(){
+                return function(){
+                    let arrow = ()=>console.log(this)
+                    arrow()
+                }
+            }
+        }
+        a.b()()
+        function parent(){
+
+            let arrow = ()=>console.log(this)
+            let f = function(){console.log(this)}
+            arrow()
+            f()
+            console.log(this)
+        }
+        parent()
+
+        function foo() {
+            setTimeout(() => {
+                console.log('id:', this.id);
+            }, 0);
+        }
+        var id = 21;
+        foo.call({ id: 42 });
+
+        //上面代码之中，只有一个this，就是函数foo的this，所以t1、t2、t3都输出同样的结果。因为所有的内层函数都是箭头函数，都没有自己的this，它们的this其实都是最外层foo函数的this
+        function baz() {
+            return () => {
+                return () => {
+                    return () => {
+                        console.log('id:', this.id);
+                    };
+                };
+            };
+        }
+        var f = baz.call({id: 1});
+        var t1 = f.call({id: 2})()(); // id: 1
+        var t2 = f().call({id: 3})(); // id: 1
+        var t3 = f()().call({id: 4}); // id: 1
+
+    }
+
 }
