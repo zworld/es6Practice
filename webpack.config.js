@@ -41,6 +41,7 @@ const config = {
                 test: /\.(js|es6)$/,
                 loader: 'babel',
                 exclude: /node_modules/,
+                include: /src/
             }
         ],
 
