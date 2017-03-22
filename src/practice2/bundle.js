@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -45,11 +45,11 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var _slicedToArray2 = __webpack_require__(1);
-
+	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	/*
 	* 变量结构，分为数组结构,对象结构,字符串，函数等解构
 	* 数组，对象允许嵌套赋值
@@ -59,14 +59,14 @@
 	{
 	    var a = 1,
 	        b = 2;
-
+	
 	    console.log(a, b);
 	}
 	{
 	    var _ref = [1, 2, 3],
 	        x = _ref[0],
 	        y = _ref[2];
-
+	
 	    console.log(x, y);
 	}
 	{
@@ -75,33 +75,33 @@
 	        _y = _ref2[0],
 	        z = _ref2[1],
 	        g = 3;
-
+	
 	    console.log(_x, _y, z, g);
 	}
 	{
 	    // 默认值，必须右边严格为undefined才生效
 	    var _undefined = undefined,
 	        _x2 = _undefined === undefined ? 1 : _undefined;
-
+	
 	    var _ref3 = null,
 	        _y2 = _ref3 === undefined ? 1 : _ref3;
-
+	
 	    console.log(_x2, _y2);
 	}
 	{
 	    //数组有个length属性
 	    var _hello = 'hello',
 	        len = _hello.length;
-
+	
 	    console.log(len);
 	}
-
+	
 	//对象结构，对象的解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量。
 	{
 	    var _foo$baz = { foo: 'foo', baz: 'baz' },
 	        foo = _foo$baz.foo,
 	        bar = _foo$baz.bar;
-
+	
 	    console.log(foo, bar);
 	}
 	{
@@ -109,7 +109,7 @@
 	    var _first$last = { first: 'hello', last: 'world' },
 	        f = _first$last.first,
 	        l = _first$last.last;
-
+	
 	    console.log(f, l);
 	}
 	{
@@ -117,11 +117,11 @@
 	    var obj = {
 	        p: ['Hello', { y: 'World' }]
 	    };
-
+	
 	    var _obj$p = (0, _slicedToArray3.default)(obj.p, 2),
 	        _x3 = _obj$p[0],
 	        _y3 = _obj$p[1].y;
-
+	
 	    console.log(_x3, _y3);
 	}
 	{
@@ -131,7 +131,7 @@
 	        _x$z$y = _x$z.y,
 	        _y4 = _x$z$y === undefined ? 1 : _x$z$y,
 	        _z = _x$z.z;
-
+	
 	    console.log(_x4, _y4, _z);
 	}
 	{
@@ -139,7 +139,7 @@
 	    var cos = Math.cos,
 	        sin = Math.sin,
 	        floor = Math.floor;
-
+	
 	    console.log(cos, sin, floor);
 	}
 	{
@@ -147,10 +147,10 @@
 	    var _ref4 = [1, 2],
 	        first = _ref4[0],
 	        second = _ref4[1];
-
+	
 	    console.log(first, second);
 	}
-
+	
 	//字符串解构
 	{
 	    //赋值
@@ -159,15 +159,15 @@
 	        _a = _ref5[0],
 	        _b = _ref5[1],
 	        c = _ref5[2];
-
+	
 	    console.log(_a, _b, c);
 	    //字符串的length属性
 	    var _2 = "123",
 	        _len = _2.length;
-
+	
 	    console.log(_len);
 	}
-
+	
 	//函数解构
 	{
 	    var arr = [[1, 2], [3, 4]];
@@ -175,7 +175,7 @@
 	        var _ref7 = (0, _slicedToArray3.default)(_ref6, 2),
 	            a = _ref7[0],
 	            b = _ref7[1];
-
+	
 	        return a + b;
 	    });
 	    console.log(arrCopy);
@@ -186,30 +186,30 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
-
+	
 	exports.__esModule = true;
-
+	
 	var _isIterable2 = __webpack_require__(2);
-
+	
 	var _isIterable3 = _interopRequireDefault(_isIterable2);
-
+	
 	var _getIterator2 = __webpack_require__(54);
-
+	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	exports.default = function () {
 	  function sliceIterator(arr, i) {
 	    var _arr = [];
 	    var _n = true;
 	    var _d = false;
 	    var _e = undefined;
-
+	
 	    try {
 	      for (var _i = (0, _getIterator3.default)(arr), _s; !(_n = (_s = _i.next()).done); _n = true) {
 	        _arr.push(_s.value);
-
+	
 	        if (i && _arr.length === i) break;
 	      }
 	    } catch (err) {
@@ -222,10 +222,10 @@
 	        if (_d) throw _e;
 	      }
 	    }
-
+	
 	    return _arr;
 	  }
-
+	
 	  return function (arr, i) {
 	    if (Array.isArray(arr)) {
 	      return arr;
@@ -260,7 +260,7 @@
 	  , hide          = __webpack_require__(20)
 	  , Iterators     = __webpack_require__(8)
 	  , TO_STRING_TAG = __webpack_require__(47)('toStringTag');
-
+	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
 	    , Collection = global[NAME]
@@ -278,7 +278,7 @@
 	  , step             = __webpack_require__(7)
 	  , Iterators        = __webpack_require__(8)
 	  , toIObject        = __webpack_require__(9);
-
+	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
@@ -300,10 +300,10 @@
 	  if(kind == 'values')return step(0, O[index]);
 	  return step(0, [index, O[index]]);
 	}, 'values');
-
+	
 	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
 	Iterators.Arguments = Iterators.Array;
-
+	
 	addToUnscopables('keys');
 	addToUnscopables('values');
 	addToUnscopables('entries');
@@ -354,7 +354,7 @@
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
-
+	
 	module.exports = function(it){
 	  return toString.call(it).slice(8, -1);
 	};
@@ -388,9 +388,9 @@
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
 	  , VALUES         = 'values';
-
+	
 	var returnThis = function(){ return this; };
-
+	
 	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
 	  $iterCreate(Constructor, NAME, next);
 	  var getMethod = function(kind){
@@ -459,7 +459,7 @@
 	  , ctx       = __webpack_require__(18)
 	  , hide      = __webpack_require__(20)
 	  , PROTOTYPE = 'prototype';
-
+	
 	var $export = function(type, name, source){
 	  var IS_FORCED = type & $export.F
 	    , IS_GLOBAL = type & $export.G
@@ -587,7 +587,7 @@
 	  , IE8_DOM_DEFINE = __webpack_require__(24)
 	  , toPrimitive    = __webpack_require__(28)
 	  , dP             = Object.defineProperty;
-
+	
 	exports.f = __webpack_require__(25) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
@@ -713,10 +713,10 @@
 	  , descriptor     = __webpack_require__(29)
 	  , setToStringTag = __webpack_require__(46)
 	  , IteratorPrototype = {};
-
+	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
 	__webpack_require__(20)(IteratorPrototype, __webpack_require__(47)('iterator'), function(){ return this; });
-
+	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
 	  setToStringTag(Constructor, NAME + ' Iterator');
@@ -733,7 +733,7 @@
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
-
+	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
@@ -755,7 +755,7 @@
 	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
 	  return createDict();
 	};
-
+	
 	module.exports = Object.create || function create(O, Properties){
 	  var result;
 	  if(O !== null){
@@ -776,7 +776,7 @@
 	var dP       = __webpack_require__(21)
 	  , anObject = __webpack_require__(22)
 	  , getKeys  = __webpack_require__(35);
-
+	
 	module.exports = __webpack_require__(25) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
@@ -794,7 +794,7 @@
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
 	var $keys       = __webpack_require__(36)
 	  , enumBugKeys = __webpack_require__(44);
-
+	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
@@ -807,7 +807,7 @@
 	  , toIObject    = __webpack_require__(9)
 	  , arrayIndexOf = __webpack_require__(37)(false)
 	  , IE_PROTO     = __webpack_require__(41)('IE_PROTO');
-
+	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
 	    , i      = 0
@@ -934,7 +934,7 @@
 	var def = __webpack_require__(21).f
 	  , has = __webpack_require__(31)
 	  , TAG = __webpack_require__(47)('toStringTag');
-
+	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
@@ -947,12 +947,12 @@
 	  , uid        = __webpack_require__(43)
 	  , Symbol     = __webpack_require__(16).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
-
+	
 	var $exports = module.exports = function(name){
 	  return store[name] || (store[name] =
 	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 	};
-
+	
 	$exports.store = store;
 
 /***/ },
@@ -964,7 +964,7 @@
 	  , toObject    = __webpack_require__(49)
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
-
+	
 	module.exports = Object.getPrototypeOf || function(O){
 	  O = toObject(O);
 	  if(has(O, IE_PROTO))return O[IE_PROTO];
@@ -989,7 +989,7 @@
 
 	'use strict';
 	var $at  = __webpack_require__(51)(true);
-
+	
 	// 21.1.3.27 String.prototype[@@iterator]()
 	__webpack_require__(13)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
@@ -1050,14 +1050,14 @@
 	  , TAG = __webpack_require__(47)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-
+	
 	// fallback for IE11 Script Access Denied error
 	var tryGet = function(it, key){
 	  try {
 	    return it[key];
 	  } catch(e){ /* empty */ }
 	};
-
+	
 	module.exports = function(it){
 	  var O, T, B;
 	  return it === undefined ? 'Undefined' : it === null ? 'Null'
@@ -1110,3 +1110,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

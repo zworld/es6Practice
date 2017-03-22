@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -45,16 +45,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var _getIterator2 = __webpack_require__(54);
-
+	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	/*
 	    ES5和ES6字符串操作总结
 	    es5中的操作均返回副本 原字符串不变
 	 */
-
+	
 	//es5总结
 	{
 	    var str = "hello world";
@@ -80,18 +80,18 @@
 	    console.log(_str2.toUpperCase(), _str2);
 	    console.log(_str2.toLowerCase(), _str2);
 	}
-
+	
 	//ES6
 	{
 	    //字符串遍历
 	    var _iteratorNormalCompletion = true;
 	    var _didIteratorError = false;
 	    var _iteratorError = undefined;
-
+	
 	    try {
 	        for (var _iterator = (0, _getIterator3.default)('abc'), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 	            var codePoint = _step.value;
-
+	
 	            console.log(codePoint);
 	        }
 	        //includes(), startsWith(), endsWith() 返回boolean
@@ -109,15 +109,15 @@
 	            }
 	        }
 	    }
-
+	
 	    var _str3 = "hello world";
 	    console.log(_str3.includes('hello'));
 	    console.log(_str3.startsWith('he'), _str3.startsWith('z'));
 	    console.log(_str3.endsWith('ld'), _str3.endsWith('z'));
-
+	
 	    //repeat
 	    console.log(_str3.repeat(2));
-
+	
 	    //padStart()，padEnd()是ES7语法
 	    // let padStr = 'pad';
 	    // console.log(padStr.padStart(6,'add'))
@@ -129,7 +129,7 @@
 	    var newStr = '\u65B0\u7684\u5B57\u7B26\u4E32: ' + _str4.split(' ').map(function (item) {
 	        return '\n        <strong>' + item + '</strong>\n    ';
 	    }).join('\n');
-
+	
 	    console.log(newStr);
 	}
 
@@ -145,7 +145,7 @@
 	  , hide          = __webpack_require__(20)
 	  , Iterators     = __webpack_require__(8)
 	  , TO_STRING_TAG = __webpack_require__(47)('toStringTag');
-
+	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
 	    , Collection = global[NAME]
@@ -163,7 +163,7 @@
 	  , step             = __webpack_require__(7)
 	  , Iterators        = __webpack_require__(8)
 	  , toIObject        = __webpack_require__(9);
-
+	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
@@ -185,10 +185,10 @@
 	  if(kind == 'values')return step(0, O[index]);
 	  return step(0, [index, O[index]]);
 	}, 'values');
-
+	
 	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
 	Iterators.Arguments = Iterators.Array;
-
+	
 	addToUnscopables('keys');
 	addToUnscopables('values');
 	addToUnscopables('entries');
@@ -239,7 +239,7 @@
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
-
+	
 	module.exports = function(it){
 	  return toString.call(it).slice(8, -1);
 	};
@@ -273,9 +273,9 @@
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
 	  , VALUES         = 'values';
-
+	
 	var returnThis = function(){ return this; };
-
+	
 	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
 	  $iterCreate(Constructor, NAME, next);
 	  var getMethod = function(kind){
@@ -344,7 +344,7 @@
 	  , ctx       = __webpack_require__(18)
 	  , hide      = __webpack_require__(20)
 	  , PROTOTYPE = 'prototype';
-
+	
 	var $export = function(type, name, source){
 	  var IS_FORCED = type & $export.F
 	    , IS_GLOBAL = type & $export.G
@@ -472,7 +472,7 @@
 	  , IE8_DOM_DEFINE = __webpack_require__(24)
 	  , toPrimitive    = __webpack_require__(28)
 	  , dP             = Object.defineProperty;
-
+	
 	exports.f = __webpack_require__(25) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
@@ -598,10 +598,10 @@
 	  , descriptor     = __webpack_require__(29)
 	  , setToStringTag = __webpack_require__(46)
 	  , IteratorPrototype = {};
-
+	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
 	__webpack_require__(20)(IteratorPrototype, __webpack_require__(47)('iterator'), function(){ return this; });
-
+	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
 	  setToStringTag(Constructor, NAME + ' Iterator');
@@ -618,7 +618,7 @@
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
-
+	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
@@ -640,7 +640,7 @@
 	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
 	  return createDict();
 	};
-
+	
 	module.exports = Object.create || function create(O, Properties){
 	  var result;
 	  if(O !== null){
@@ -661,7 +661,7 @@
 	var dP       = __webpack_require__(21)
 	  , anObject = __webpack_require__(22)
 	  , getKeys  = __webpack_require__(35);
-
+	
 	module.exports = __webpack_require__(25) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
@@ -679,7 +679,7 @@
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
 	var $keys       = __webpack_require__(36)
 	  , enumBugKeys = __webpack_require__(44);
-
+	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
@@ -692,7 +692,7 @@
 	  , toIObject    = __webpack_require__(9)
 	  , arrayIndexOf = __webpack_require__(37)(false)
 	  , IE_PROTO     = __webpack_require__(41)('IE_PROTO');
-
+	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
 	    , i      = 0
@@ -819,7 +819,7 @@
 	var def = __webpack_require__(21).f
 	  , has = __webpack_require__(31)
 	  , TAG = __webpack_require__(47)('toStringTag');
-
+	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
@@ -832,12 +832,12 @@
 	  , uid        = __webpack_require__(43)
 	  , Symbol     = __webpack_require__(16).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
-
+	
 	var $exports = module.exports = function(name){
 	  return store[name] || (store[name] =
 	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 	};
-
+	
 	$exports.store = store;
 
 /***/ },
@@ -849,7 +849,7 @@
 	  , toObject    = __webpack_require__(49)
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
-
+	
 	module.exports = Object.getPrototypeOf || function(O){
 	  O = toObject(O);
 	  if(has(O, IE_PROTO))return O[IE_PROTO];
@@ -874,7 +874,7 @@
 
 	'use strict';
 	var $at  = __webpack_require__(51)(true);
-
+	
 	// 21.1.3.27 String.prototype[@@iterator]()
 	__webpack_require__(13)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
@@ -922,14 +922,14 @@
 	  , TAG = __webpack_require__(47)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-
+	
 	// fallback for IE11 Script Access Denied error
 	var tryGet = function(it, key){
 	  try {
 	    return it[key];
 	  } catch(e){ /* empty */ }
 	};
-
+	
 	module.exports = function(it){
 	  var O, T, B;
 	  return it === undefined ? 'Undefined' : it === null ? 'Null'
@@ -982,3 +982,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

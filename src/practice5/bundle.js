@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -45,24 +45,24 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var _getIterator2 = __webpack_require__(54);
-
+	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
-
+	
 	var _from = __webpack_require__(68);
-
+	
 	var _from2 = _interopRequireDefault(_from);
-
+	
 	var _slice = __webpack_require__(75);
-
+	
 	var _slice2 = _interopRequireDefault(_slice);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	// import "babel-polyfill"
 	/*
 	数组操作
 	 */
-
+	
 	//ES5
 	{
 	    {
@@ -105,7 +105,7 @@
 	        var arrCopy2 = _arr4.concat(); //用数组操作方法来实现数组的深拷贝
 	        arrCopy1.sort();
 	        console.log(arrCopy1);
-
+	
 	        //sort如果第一个参数小于第二个返回负数   sort不传参，默认调用tostring,然后比较字符串
 	        arrCopy2.sort(function (item1, item2) {
 	            return item1 - item2;
@@ -130,31 +130,31 @@
 	    }
 	    {
 	        //迭代方法 every filter forEach map some 参数均是（item,index,array）
-
+	
 	        var _arr7 = [1, 2, 3, 4, 5, 6];
 	        //every,遍历每一项 如果均返回true，则结果返回true,如果某一项没返回true,终止递归，返回false
 	        var everyResult = _arr7.every(function (item, index, array) {
 	            return true;
 	        });
 	        console.log(everyResult);
-
+	
 	        //filter 运行每一项 返回结果为true的项组成数组
 	        var filterResult = _arr7.filter(function (item, index, arr) {
 	            if (item < 4) return true;
 	        });
 	        console.log(filterResult);
-
+	
 	        //forEach遍历每一项，无返回值
 	        var forEachResult = _arr7.forEach(function (item, index, array) {});
-
+	
 	        //map 返回每次函数调用的结果组成的数组,没有返回则返回数组该项为undefined
 	        var mapResult = _arr7.map(function (item, index, array) {
 	            return Math.pow(item, 2);
 	        });
 	        console.log(mapResult);
-
+	
 	        //some 迭代每一项，如果有一项返回true 则返回true
-
+	
 	        var someResult = _arr7.some(function (item, index, array) {
 	            if (item == 1) return true;
 	        });
@@ -170,7 +170,7 @@
 	        console.log(sum);
 	    }
 	}
-
+	
 	//ES6
 	{
 	    {
@@ -183,7 +183,7 @@
 	            // arg = [...arg]
 	            arg = _slice2.default.call(null, arg);
 	            console.log(Object.prototype.toString.call(arg));
-
+	
 	            var likeArr = {
 	                0: 1,
 	                length: 1
@@ -207,15 +207,15 @@
 	    {
 	        //数组实例的entries()，keys()和values(),数组支持for....of,用作遍历
 	        var _arr10 = [5, 6, 7, 8, 9];
-
+	
 	        var _iteratorNormalCompletion = true;
 	        var _didIteratorError = false;
 	        var _iteratorError = undefined;
-
+	
 	        try {
 	            for (var _iterator = (0, _getIterator3.default)(_arr10.keys()), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 	                var index = _step.value;
-
+	
 	                console.log(index);
 	            }
 	        } catch (err) {
@@ -232,7 +232,7 @@
 	                }
 	            }
 	        }
-
+	
 	        [1, 2, 3].includes(3, 3);
 	        console.log(_arr10.keys());
 	    }
@@ -250,7 +250,7 @@
 	  , hide          = __webpack_require__(20)
 	  , Iterators     = __webpack_require__(8)
 	  , TO_STRING_TAG = __webpack_require__(47)('toStringTag');
-
+	
 	for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList', 'CSSRuleList'], i = 0; i < 5; i++){
 	  var NAME       = collections[i]
 	    , Collection = global[NAME]
@@ -268,7 +268,7 @@
 	  , step             = __webpack_require__(7)
 	  , Iterators        = __webpack_require__(8)
 	  , toIObject        = __webpack_require__(9);
-
+	
 	// 22.1.3.4 Array.prototype.entries()
 	// 22.1.3.13 Array.prototype.keys()
 	// 22.1.3.29 Array.prototype.values()
@@ -290,10 +290,10 @@
 	  if(kind == 'values')return step(0, O[index]);
 	  return step(0, [index, O[index]]);
 	}, 'values');
-
+	
 	// argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
 	Iterators.Arguments = Iterators.Array;
-
+	
 	addToUnscopables('keys');
 	addToUnscopables('values');
 	addToUnscopables('entries');
@@ -344,7 +344,7 @@
 /***/ function(module, exports) {
 
 	var toString = {}.toString;
-
+	
 	module.exports = function(it){
 	  return toString.call(it).slice(8, -1);
 	};
@@ -378,9 +378,9 @@
 	  , FF_ITERATOR    = '@@iterator'
 	  , KEYS           = 'keys'
 	  , VALUES         = 'values';
-
+	
 	var returnThis = function(){ return this; };
-
+	
 	module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED){
 	  $iterCreate(Constructor, NAME, next);
 	  var getMethod = function(kind){
@@ -449,7 +449,7 @@
 	  , ctx       = __webpack_require__(18)
 	  , hide      = __webpack_require__(20)
 	  , PROTOTYPE = 'prototype';
-
+	
 	var $export = function(type, name, source){
 	  var IS_FORCED = type & $export.F
 	    , IS_GLOBAL = type & $export.G
@@ -577,7 +577,7 @@
 	  , IE8_DOM_DEFINE = __webpack_require__(24)
 	  , toPrimitive    = __webpack_require__(28)
 	  , dP             = Object.defineProperty;
-
+	
 	exports.f = __webpack_require__(25) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
@@ -703,10 +703,10 @@
 	  , descriptor     = __webpack_require__(29)
 	  , setToStringTag = __webpack_require__(46)
 	  , IteratorPrototype = {};
-
+	
 	// 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
 	__webpack_require__(20)(IteratorPrototype, __webpack_require__(47)('iterator'), function(){ return this; });
-
+	
 	module.exports = function(Constructor, NAME, next){
 	  Constructor.prototype = create(IteratorPrototype, {next: descriptor(1, next)});
 	  setToStringTag(Constructor, NAME + ' Iterator');
@@ -723,7 +723,7 @@
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , Empty       = function(){ /* empty */ }
 	  , PROTOTYPE   = 'prototype';
-
+	
 	// Create object with fake `null` prototype: use iframe Object with cleared prototype
 	var createDict = function(){
 	  // Thrash, waste and sodomy: IE GC bug
@@ -745,7 +745,7 @@
 	  while(i--)delete createDict[PROTOTYPE][enumBugKeys[i]];
 	  return createDict();
 	};
-
+	
 	module.exports = Object.create || function create(O, Properties){
 	  var result;
 	  if(O !== null){
@@ -766,7 +766,7 @@
 	var dP       = __webpack_require__(21)
 	  , anObject = __webpack_require__(22)
 	  , getKeys  = __webpack_require__(35);
-
+	
 	module.exports = __webpack_require__(25) ? Object.defineProperties : function defineProperties(O, Properties){
 	  anObject(O);
 	  var keys   = getKeys(Properties)
@@ -784,7 +784,7 @@
 	// 19.1.2.14 / 15.2.3.14 Object.keys(O)
 	var $keys       = __webpack_require__(36)
 	  , enumBugKeys = __webpack_require__(44);
-
+	
 	module.exports = Object.keys || function keys(O){
 	  return $keys(O, enumBugKeys);
 	};
@@ -797,7 +797,7 @@
 	  , toIObject    = __webpack_require__(9)
 	  , arrayIndexOf = __webpack_require__(37)(false)
 	  , IE_PROTO     = __webpack_require__(41)('IE_PROTO');
-
+	
 	module.exports = function(object, names){
 	  var O      = toIObject(object)
 	    , i      = 0
@@ -924,7 +924,7 @@
 	var def = __webpack_require__(21).f
 	  , has = __webpack_require__(31)
 	  , TAG = __webpack_require__(47)('toStringTag');
-
+	
 	module.exports = function(it, tag, stat){
 	  if(it && !has(it = stat ? it : it.prototype, TAG))def(it, TAG, {configurable: true, value: tag});
 	};
@@ -937,12 +937,12 @@
 	  , uid        = __webpack_require__(43)
 	  , Symbol     = __webpack_require__(16).Symbol
 	  , USE_SYMBOL = typeof Symbol == 'function';
-
+	
 	var $exports = module.exports = function(name){
 	  return store[name] || (store[name] =
 	    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : uid)('Symbol.' + name));
 	};
-
+	
 	$exports.store = store;
 
 /***/ },
@@ -954,7 +954,7 @@
 	  , toObject    = __webpack_require__(49)
 	  , IE_PROTO    = __webpack_require__(41)('IE_PROTO')
 	  , ObjectProto = Object.prototype;
-
+	
 	module.exports = Object.getPrototypeOf || function(O){
 	  O = toObject(O);
 	  if(has(O, IE_PROTO))return O[IE_PROTO];
@@ -979,7 +979,7 @@
 
 	'use strict';
 	var $at  = __webpack_require__(51)(true);
-
+	
 	// 21.1.3.27 String.prototype[@@iterator]()
 	__webpack_require__(13)(String, 'String', function(iterated){
 	  this._t = String(iterated); // target
@@ -1027,14 +1027,14 @@
 	  , TAG = __webpack_require__(47)('toStringTag')
 	  // ES3 wrong here
 	  , ARG = cof(function(){ return arguments; }()) == 'Arguments';
-
+	
 	// fallback for IE11 Script Access Denied error
 	var tryGet = function(it, key){
 	  try {
 	    return it[key];
 	  } catch(e){ /* empty */ }
 	};
-
+	
 	module.exports = function(it){
 	  var O, T, B;
 	  return it === undefined ? 'Undefined' : it === null ? 'Null'
@@ -1122,7 +1122,7 @@
 	  , toLength       = __webpack_require__(38)
 	  , createProperty = __webpack_require__(73)
 	  , getIterFn      = __webpack_require__(57);
-
+	
 	$export($export.S + $export.F * !__webpack_require__(74)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
@@ -1177,7 +1177,7 @@
 	var Iterators  = __webpack_require__(8)
 	  , ITERATOR   = __webpack_require__(47)('iterator')
 	  , ArrayProto = Array.prototype;
-
+	
 	module.exports = function(it){
 	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
 	};
@@ -1189,7 +1189,7 @@
 	'use strict';
 	var $defineProperty = __webpack_require__(21)
 	  , createDesc      = __webpack_require__(29);
-
+	
 	module.exports = function(object, index, value){
 	  if(index in object)$defineProperty.f(object, index, createDesc(0, value));
 	  else object[index] = value;
@@ -1201,13 +1201,13 @@
 
 	var ITERATOR     = __webpack_require__(47)('iterator')
 	  , SAFE_CLOSING = false;
-
+	
 	try {
 	  var riter = [7][ITERATOR]();
 	  riter['return'] = function(){ SAFE_CLOSING = true; };
 	  Array.from(riter, function(){ throw 2; });
 	} catch(e){ /* empty */ }
-
+	
 	module.exports = function(exec, skipClosing){
 	  if(!skipClosing && !SAFE_CLOSING)return false;
 	  var safe = false;
@@ -1245,7 +1245,7 @@
 	  , toIndex    = __webpack_require__(40)
 	  , toLength   = __webpack_require__(38)
 	  , arraySlice = [].slice;
-
+	
 	// fallback for not array-like ES3 strings and DOM objects
 	$export($export.P + $export.F * __webpack_require__(26)(function(){
 	  if(html)arraySlice.call(html);
@@ -1269,3 +1269,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map

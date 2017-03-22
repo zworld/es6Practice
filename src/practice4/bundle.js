@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -45,33 +45,33 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var _isNan = __webpack_require__(58);
-
+	
 	var _isNan2 = _interopRequireDefault(_isNan);
-
+	
 	var _isFinite = __webpack_require__(61);
-
+	
 	var _isFinite2 = _interopRequireDefault(_isFinite);
-
+	
 	var _sign = __webpack_require__(64);
-
+	
 	var _sign2 = _interopRequireDefault(_sign);
-
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+	
 	/*
 	Math在es5和es6中的操作,除开少有的数学操作。
 	Number的操作
 	 */
-
+	
 	//es5
 	{
 	    //math.PI
 	    console.log(Math.PI);
-
+	
 	    //max min
 	    console.log(Math.max(1, 2, 3, 4, 5), Math.max.apply(undefined, [1, 2, 3, 4, 5]));
 	    console.log(Math.min(1, 2, 3, 4, 5), Math.min.apply(undefined, [1, 2, 3, 4, 5]));
-
+	
 	    //ceil,floor,round
 	    console.log(Math.ceil(25.1), Math.ceil(25.9)); //向上取整
 	    console.log(Math.floor(25.1), Math.floor(25.9)); //向下取整
@@ -88,7 +88,7 @@
 	    //sign判断正负零
 	    console.log((0, _sign2.default)(-1), (0, _sign2.default)(0), (0, _sign2.default)(1));
 	}
-
+	
 	//es5 Number
 	{
 	    //toString()参数是进制
@@ -129,7 +129,7 @@
 	  , ctx       = __webpack_require__(18)
 	  , hide      = __webpack_require__(20)
 	  , PROTOTYPE = 'prototype';
-
+	
 	var $export = function(type, name, source){
 	  var IS_FORCED = type & $export.F
 	    , IS_GLOBAL = type & $export.G
@@ -257,7 +257,7 @@
 	  , IE8_DOM_DEFINE = __webpack_require__(24)
 	  , toPrimitive    = __webpack_require__(28)
 	  , dP             = Object.defineProperty;
-
+	
 	exports.f = __webpack_require__(25) ? Object.defineProperty : function defineProperty(O, P, Attributes){
 	  anObject(O);
 	  P = toPrimitive(P, true);
@@ -406,7 +406,7 @@
 
 	// 20.1.2.4 Number.isNaN(number)
 	var $export = __webpack_require__(15);
-
+	
 	$export($export.S, 'Number', {
 	  isNaN: function isNaN(number){
 	    return number != number;
@@ -433,7 +433,7 @@
 	// 20.1.2.2 Number.isFinite(number)
 	var $export   = __webpack_require__(15)
 	  , _isFinite = __webpack_require__(16).isFinite;
-
+	
 	$export($export.S, 'Number', {
 	  isFinite: function isFinite(it){
 	    return typeof it == 'number' && _isFinite(it);
@@ -459,7 +459,7 @@
 
 	// 20.2.2.28 Math.sign(x)
 	var $export = __webpack_require__(15);
-
+	
 	$export($export.S, 'Math', {sign: __webpack_require__(67)});
 
 /***/ },
@@ -473,3 +473,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=bundle.js.map
