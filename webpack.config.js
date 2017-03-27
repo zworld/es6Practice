@@ -22,8 +22,10 @@ var walkSync = function(dir, filelist) {
 
 filelist = walkSync(path.join(__dirname , 'src/'),[])
 filelist.forEach(function(item,index){
-    var i = index + 1;
-    entry['practice' + i] = item
+    console.log(item)
+    var fileReg = /practice[0-9]+/;
+    var currentFile = item.match(fileReg)[0];
+    entry[currentFile] = item
 })
 
 const config = {
