@@ -1,6 +1,7 @@
 /*
     iterator和for...of
     在ES6中，有三类数据结构原生具备Iterator接口：数组、某些类似数组的对象、Set和Map结构。
+    Symbol.iterator接口
  */
 
 {
@@ -26,5 +27,47 @@
         let strIterator = str[Symbol.iterator]();
         console.log(strIterator.next(),strIterator.next(),strIterator.next(),strIterator.next(),strIterator.next(),strIterator.next(),strIterator.next())
     }
+    {
+        //运用
+        //yield* 将对有Symbol.iterator接口的数据 自动使用
+        let generator = function* (){
+            yield 1;
+            yield* [2,3];
+            yield [4,5];
+            yield 6
+        }
+        console.log(generator)
+        let iterator = generator();
+        console.log(iterator.next(),iterator.next(),iterator.next(),iterator.next(),iterator.next(),iterator.next())
+    }
+    {
+       //添加iterator属性
+        let a = {};
+        a[Symbol.iterator] = function* () {
+            yield 1;
+            yield 2
+        }
+        for(let x of a){
+            console.log(x)
+        }
+    }
+    {
+        //for...of可以用break跳出，forEach不能
+        let arr = [1,2,3,4,5];
+        arr.forEach(function(val){
+            if(val==3){
+                return
+            }else{
+                console.log(val)
+            }
+        });
 
+        for(let v of arr){
+            if(v == 3){
+                break
+            }else{
+                console.log(v)
+            }
+        }
+    }
 }
