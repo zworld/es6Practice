@@ -1,7 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const fs = require('fs');
+const HappyPack = require('happypack');
 var entry = {};
+
 var filelist;
 var walkSync = function(dir, filelist) {
     var fs = fs || require('fs'),
@@ -22,9 +24,9 @@ var walkSync = function(dir, filelist) {
 
 filelist = walkSync(path.join(__dirname , 'src/'),[])
 filelist.forEach(function(item,index){
-    console.log(item)
-    var fileReg = /practice[0-9]+/;
+    var fileReg = /practice[^//]+/;
     var currentFile = item.match(fileReg)[0];
+    console.log(currentFile)
     entry[currentFile] = item
 })
 
@@ -41,7 +43,7 @@ const config = {
         //转化es6语法
             {
                 test: /\.(js|es6)$/,
-                loader: 'babel',
+                loader: 'happypack/loader',
                 exclude: /node_modules/,
                 include: /src/
             }
@@ -50,9 +52,22 @@ const config = {
 
     },
     devtool: 'source-map',
-    plugins: {
-
-    }
+    plugins: [
+        new HappyPack({
+            threads: 4,
+            loaders: [
+                {
+                    path: 'babel',
+                    query: {
+                        presets: ["es2015"],
+                        plugins: ["transform-runtime"],
+                        ignore: [
+                            "./src/js/directive/datePicker.js"
+                        ]
+                    }
+                }]
+        }),
+    ]
 }
 
 module.exports = config;
