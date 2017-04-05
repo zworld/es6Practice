@@ -48,11 +48,11 @@
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
-	var _from = __webpack_require__(75);
+	var _from = __webpack_require__(77);
 	
 	var _from2 = _interopRequireDefault(_from);
 	
-	var _slice = __webpack_require__(82);
+	var _slice = __webpack_require__(95);
 	
 	var _slice2 = _interopRequireDefault(_slice);
 	
@@ -1095,8 +1095,36 @@
 /* 64 */,
 /* 65 */,
 /* 66 */,
-/* 67 */,
-/* 68 */,
+/* 67 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// call something on iterator step with safe closing on error
+	var anObject = __webpack_require__(16);
+	module.exports = function(iterator, fn, value, entries){
+	  try {
+	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+	  // 7.4.6 IteratorClose(iterator, completion)
+	  } catch(e){
+	    var ret = iterator['return'];
+	    if(ret !== undefined)anObject(ret.call(iterator));
+	    throw e;
+	  }
+	};
+
+/***/ },
+/* 68 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// check on default Array iterator
+	var Iterators  = __webpack_require__(26)
+	  , ITERATOR   = __webpack_require__(44)('iterator')
+	  , ArrayProto = Array.prototype;
+	
+	module.exports = function(it){
+	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
+	};
+
+/***/ },
 /* 69 */,
 /* 70 */,
 /* 71 */,
@@ -1106,31 +1134,58 @@
 /* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(76), __esModule: true };
+	var ITERATOR     = __webpack_require__(44)('iterator')
+	  , SAFE_CLOSING = false;
+	
+	try {
+	  var riter = [7][ITERATOR]();
+	  riter['return'] = function(){ SAFE_CLOSING = true; };
+	  Array.from(riter, function(){ throw 2; });
+	} catch(e){ /* empty */ }
+	
+	module.exports = function(exec, skipClosing){
+	  if(!skipClosing && !SAFE_CLOSING)return false;
+	  var safe = false;
+	  try {
+	    var arr  = [7]
+	      , iter = arr[ITERATOR]();
+	    iter.next = function(){ return {done: safe = true}; };
+	    arr[ITERATOR] = function(){ return iter; };
+	    exec(arr);
+	  } catch(e){ /* empty */ }
+	  return safe;
+	};
 
 /***/ },
-/* 76 */
+/* 76 */,
+/* 77 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(78), __esModule: true };
+
+/***/ },
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(3);
-	__webpack_require__(77);
+	__webpack_require__(79);
 	module.exports = __webpack_require__(11).Array.from;
 
 /***/ },
-/* 77 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	var ctx            = __webpack_require__(12)
 	  , $export        = __webpack_require__(9)
 	  , toObject       = __webpack_require__(46)
-	  , call           = __webpack_require__(78)
-	  , isArrayIter    = __webpack_require__(79)
+	  , call           = __webpack_require__(67)
+	  , isArrayIter    = __webpack_require__(68)
 	  , toLength       = __webpack_require__(36)
 	  , createProperty = __webpack_require__(80)
 	  , getIterFn      = __webpack_require__(59);
 	
-	$export($export.S + $export.F * !__webpack_require__(81)(function(iter){ Array.from(iter); }), 'Array', {
+	$export($export.S + $export.F * !__webpack_require__(75)(function(iter){ Array.from(iter); }), 'Array', {
 	  // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 	  from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
 	    var O       = toObject(arrayLike)
@@ -1160,36 +1215,6 @@
 
 
 /***/ },
-/* 78 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// call something on iterator step with safe closing on error
-	var anObject = __webpack_require__(16);
-	module.exports = function(iterator, fn, value, entries){
-	  try {
-	    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
-	  // 7.4.6 IteratorClose(iterator, completion)
-	  } catch(e){
-	    var ret = iterator['return'];
-	    if(ret !== undefined)anObject(ret.call(iterator));
-	    throw e;
-	  }
-	};
-
-/***/ },
-/* 79 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// check on default Array iterator
-	var Iterators  = __webpack_require__(26)
-	  , ITERATOR   = __webpack_require__(44)('iterator')
-	  , ArrayProto = Array.prototype;
-	
-	module.exports = function(it){
-	  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR] === it);
-	};
-
-/***/ },
 /* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1203,46 +1228,34 @@
 	};
 
 /***/ },
-/* 81 */
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */,
+/* 88 */,
+/* 89 */,
+/* 90 */,
+/* 91 */,
+/* 92 */,
+/* 93 */,
+/* 94 */,
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var ITERATOR     = __webpack_require__(44)('iterator')
-	  , SAFE_CLOSING = false;
-	
-	try {
-	  var riter = [7][ITERATOR]();
-	  riter['return'] = function(){ SAFE_CLOSING = true; };
-	  Array.from(riter, function(){ throw 2; });
-	} catch(e){ /* empty */ }
-	
-	module.exports = function(exec, skipClosing){
-	  if(!skipClosing && !SAFE_CLOSING)return false;
-	  var safe = false;
-	  try {
-	    var arr  = [7]
-	      , iter = arr[ITERATOR]();
-	    iter.next = function(){ return {done: safe = true}; };
-	    arr[ITERATOR] = function(){ return iter; };
-	    exec(arr);
-	  } catch(e){ /* empty */ }
-	  return safe;
-	};
+	module.exports = { "default": __webpack_require__(96), __esModule: true };
 
 /***/ },
-/* 82 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(83), __esModule: true };
-
-/***/ },
-/* 83 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(84);
+	__webpack_require__(97);
 	module.exports = __webpack_require__(11).Array.slice;
 
 /***/ },
-/* 84 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
