@@ -60,30 +60,32 @@
         }
         let l = lazy();
     }
-    // {
-    //     //lazyman
-    //     function lazyman(){}
-    //     lazyman.prototype.eat = function(food=''){
-    //         console.log(`eat ${food}`)
-    //         return this
-    //     }
-    //     lazyman.prototype.sleep = function(time=0){
-    //         let self = this;
-    //         let s = new Promise(resolve=>{
-    //             setTimeout( (self) =>{
-    //                 console.log(`sleep${time}s`);
-    //                 resolve(self)
-    //             },time*1000,self)
-    //         })
-    //         s.then((self)=>{
-    //             console.log(self)
-    //             return self;
-    //         })
-    //         return self;
-    //     }
-    //     let man = new lazyman();
-    //     man.eat('banana').sleep(3).eat('test')
-    // }
+    {
+        //lazyman
+        function lazyman(){
+            // if(this instanceof lazyman()) return new lazyman();
+            this.promise = new Promise(resolve=>resolve())
+        }
+        lazyman.prototype.eat = function(food=''){
+            this.promise = this.promise.then(()=>new Promise(resolve=>{
+                console.log(`eat ${food}`);
+                resolve()
+            }))
+            return this
+        }
+        lazyman.prototype.sleep = function(time=0){
+
+            this.promise = this.promise.then(()=>new Promise(
+                resolve=>{
+                setTimeout(()=>{
+                    console.log(`sleep ${time}s`);resolve()
+                },time*1000)
+            }))
+            return this;
+        }
+        let man = new lazyman();
+        man.eat('banana').sleep(3).eat('test')
+    }
     // {
     //     function lazyman(){
     //         this.tasks = [];
