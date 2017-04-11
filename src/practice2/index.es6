@@ -82,3 +82,24 @@
     let arrCopy = arr.map(([a,b]) => a + b);
     console.log(arrCopy)
 }
+
+function flat(arr){
+    let result = [];
+
+    for(let v of arr){
+        deal(v)
+    }
+    function deal(v){
+        if( v instanceof Array){
+            for(let value of v){
+                console.log(v)
+                deal(value)
+            }
+        }else{
+            console.log(v)
+            result.push(v)
+        }
+    }
+    return result
+}
+

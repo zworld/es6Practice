@@ -44,6 +44,10 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	var _getIterator2 = __webpack_require__(56);
+	
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
+	
 	var _slicedToArray2 = __webpack_require__(81);
 	
 	var _slicedToArray3 = _interopRequireDefault(_slicedToArray2);
@@ -179,6 +183,69 @@
 	        return a + b;
 	    });
 	    console.log(arrCopy);
+	}
+	
+	function flat(arr) {
+	    var result = [];
+	
+	    var _iteratorNormalCompletion = true;
+	    var _didIteratorError = false;
+	    var _iteratorError = undefined;
+	
+	    try {
+	        for (var _iterator = (0, _getIterator3.default)(arr), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	            var v = _step.value;
+	
+	            deal(v);
+	        }
+	    } catch (err) {
+	        _didIteratorError = true;
+	        _iteratorError = err;
+	    } finally {
+	        try {
+	            if (!_iteratorNormalCompletion && _iterator.return) {
+	                _iterator.return();
+	            }
+	        } finally {
+	            if (_didIteratorError) {
+	                throw _iteratorError;
+	            }
+	        }
+	    }
+	
+	    function deal(v) {
+	        if (v instanceof Array) {
+	            var _iteratorNormalCompletion2 = true;
+	            var _didIteratorError2 = false;
+	            var _iteratorError2 = undefined;
+	
+	            try {
+	                for (var _iterator2 = (0, _getIterator3.default)(v), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                    var value = _step2.value;
+	
+	                    console.log(v);
+	                    deal(value);
+	                }
+	            } catch (err) {
+	                _didIteratorError2 = true;
+	                _iteratorError2 = err;
+	            } finally {
+	                try {
+	                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                        _iterator2.return();
+	                    }
+	                } finally {
+	                    if (_didIteratorError2) {
+	                        throw _iteratorError2;
+	                    }
+	                }
+	            }
+	        } else {
+	            console.log(v);
+	            result.push(v);
+	        }
+	    }
+	    return result;
 	}
 
 /***/ },
