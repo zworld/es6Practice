@@ -44,15 +44,15 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _isNan = __webpack_require__(85);
+	var _isNan = __webpack_require__(81);
 	
 	var _isNan2 = _interopRequireDefault(_isNan);
 	
-	var _isFinite = __webpack_require__(88);
+	var _isFinite = __webpack_require__(84);
 	
 	var _isFinite2 = _interopRequireDefault(_isFinite);
 	
-	var _sign = __webpack_require__(91);
+	var _sign = __webpack_require__(87);
 	
 	var _sign2 = _interopRequireDefault(_sign);
 	
@@ -411,24 +411,20 @@
 /* 78 */,
 /* 79 */,
 /* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(86), __esModule: true };
+	module.exports = { "default": __webpack_require__(82), __esModule: true };
 
 /***/ },
-/* 86 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(87);
+	__webpack_require__(83);
 	module.exports = __webpack_require__(11).Number.isNaN;
 
 /***/ },
-/* 87 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.4 Number.isNaN(number)
@@ -441,20 +437,20 @@
 	});
 
 /***/ },
-/* 88 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(89), __esModule: true };
+	module.exports = { "default": __webpack_require__(85), __esModule: true };
 
 /***/ },
-/* 89 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(90);
+	__webpack_require__(86);
 	module.exports = __webpack_require__(11).Number.isFinite;
 
 /***/ },
-/* 90 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.1.2.2 Number.isFinite(number)
@@ -468,29 +464,29 @@
 	});
 
 /***/ },
-/* 91 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(92), __esModule: true };
+	module.exports = { "default": __webpack_require__(88), __esModule: true };
 
 /***/ },
-/* 92 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(93);
+	__webpack_require__(89);
 	module.exports = __webpack_require__(11).Math.sign;
 
 /***/ },
-/* 93 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 20.2.2.28 Math.sign(x)
 	var $export = __webpack_require__(9);
 	
-	$export($export.S, 'Math', {sign: __webpack_require__(94)});
+	$export($export.S, 'Math', {sign: __webpack_require__(90)});
 
 /***/ },
-/* 94 */
+/* 90 */
 /***/ function(module, exports) {
 
 	// 20.2.2.28 Math.sign(x)

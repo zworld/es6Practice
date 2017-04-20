@@ -314,7 +314,7 @@
         //扩展运算符可以用于合并两个对象。
         let a = {x:1}
         let b = {y:1}
-        let c = {...a,...b,z:1}//等价于Object.assign({},a,b)
+        let c = {...a,...b,z:1}//等价于Object.assign({},a,b,{z:1})
         console.log(c)
     }
 
